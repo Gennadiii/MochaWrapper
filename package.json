@@ -29,6 +29,7 @@
     "chai": "4.3.4",
     "dotenv": "10.0.0",
     "eslint": "7.32.0",
+    "lodash": "4.17.21",
     "mocha": "9.1.0",
     "tests-selector": "2.0.2",
     "typescript": "4.3.5"
