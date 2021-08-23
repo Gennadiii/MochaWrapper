@@ -29,7 +29,7 @@ function executeTests(params: executeTestsInterface) {
 
 function executeTest(params: executeTestInterface) {
   const {spec} = params;
-  const {name, test, repeat = 1} = spec;
+  const {name, test, repeat = 1} = spec; // default repeat value is 1
   repeat > 1 && console.warn(`Dont forget to remove "REPEAT"`);
   _.times(repeat, () => it(name, async function() {
     await test();

@@ -15,7 +15,7 @@ export function suite(params: suiteInterface): void {
     }, () => describe(inner, function() {
       console.info(`Tests "${specs.map(spec => spec.name).join(', ')}" running on pid: ${process.pid}`);
 
-      executeTests({specs, specPath: this.file});
+      executeTests({specs});
     }))();
   });
 }
@@ -52,11 +52,11 @@ function executeTest(params: executeTestInterface) {
     test,
   } = spec;
   let {disable} = spec;
-  if (!isDisabled(disable)) {
+  if (!isDisabled(disable)) { // checking for env to be disabled
     disable = null;
   }
   const testName = `- ${specName}${
-    disable ? ` #${disable && disable.reason}` : ''}`;
+    disable ? ` #${disable && disable.reason}` : ''}`; // adding disable reason to test name
 
   const testFunc = disable ? it.skip : it;
 
@@ -73,6 +73,16 @@ function getEnv(): string {
 
 function getBrowserName(): string {
   return 'chrome';
+}
+
+function isDisabled(disable) {
+  if (!disable) {
+    return false;
+  }
+  if (!disable.env) {
+    return true;
+  }
+  return disable.env === getEnv();
 }
 
 
@@ -100,7 +110,6 @@ interface disableInterface {
 
 interface executeTestsInterface {
   specs: testInterface[],
-  specPath: string;
 }
 
 
@@ -111,15 +120,4 @@ interface getSpecsToExecuteInterface {
 
 interface executeTestInterface {
   spec: testInterface;
-}
-
-
-function isDisabled(disable) {
-  if (!disable) {
-    return false;
-  }
-  if (!disable.env) {
-    return true;
-  }
-  return disable.env === getEnv();
 }
