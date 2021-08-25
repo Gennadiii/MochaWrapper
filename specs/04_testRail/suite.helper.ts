@@ -57,7 +57,7 @@ interface testInterface {
 
 
 interface executeTestsInterface {
-  specs: testInterface[],
+  specs: testInterface[];
   testRailSuiteId: number;
 }
 
