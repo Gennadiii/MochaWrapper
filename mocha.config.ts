@@ -1,11 +1,16 @@
 import {testsSelector} from "./helpers/testsSelector.tool";
+import {config} from "dotenv";
 
 
+config();
+const {CISpecNames} = process.env;
+console.log(`0-`.repeat(30));
+console.log([CISpecNames]);
 module.exports = {
   diff: true,
   reporter: 'spec',
   slow: "75",
   ui: "bdd",
-  spec: testsSelector.getTestsFromFile(),
+  spec: CISpecNames ? CISpecNames.split(',') : testsSelector.getTestsFromFile(),
   color: true
 };

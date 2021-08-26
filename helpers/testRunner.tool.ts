@@ -13,7 +13,7 @@ testRetryHelper.set([]);
 void async function main() {
   do {
     try {
-      const testRetryData = testRetryHelper.testRetry;
+      const testRetryData = testRetryHelper.data;
       if (process.env.isRetry) {
         process.env.CISpecNames = Object.keys(testRetryData[testRetryData.length - 1]).join(',');
         if (!process.env.CISpecNames) {
