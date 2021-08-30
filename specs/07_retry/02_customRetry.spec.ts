@@ -8,7 +8,7 @@ suite({
   name: ['Retry'],
   specs: [
     {
-      name: 'test 1', // comment this one to get a green job
+      name: 'test 1',
       // retryOnAssertionFail: true,
       async test() {
         console.log(`1`.repeat(30));
@@ -20,7 +20,6 @@ suite({
       async test() {
         console.log(`2`.repeat(30));
         expect(counter++).to.eq(1);
-        // expect(counter++).to.eq(0);
       },
     },
     {

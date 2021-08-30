@@ -21,7 +21,7 @@ suite({
       name: 'test 2',
       async test() {
         await sleep(420);
-        // throw new Error('Some error');
+        // throw new Error('Some error'); // to show retry data
         expect(true).to.be.true;
       },
     },
