@@ -4,8 +4,6 @@ import {config} from "dotenv";
 
 config();
 const {CISpecNames} = process.env;
-console.log(`0-`.repeat(30));
-console.log([CISpecNames]);
 module.exports = {
   diff: true,
   reporter: 'spec',

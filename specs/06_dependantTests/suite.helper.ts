@@ -64,7 +64,7 @@ function executeTests(params: executeTestsInterface) {
       const {dependantTests} = spec;
       executeTest({spec, isDependant});
       if (dependantTests) {
-        dependantTests.forEach(test => test.disable = test.disable || spec.disable);
+        dependantTests.forEach(test => test.disable = spec.disable || test.disable);
         executeTests({
           specs: dependantTests,
           isDependant: true,
