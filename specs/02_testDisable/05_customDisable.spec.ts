@@ -9,7 +9,7 @@ suite({
       name: 'test 1',
       disable: {
         reason: 'Reason 1',
-        link: 'https://jira.net/gbrowse/CQA-453',
+        link: 'https://jira.net/gbrowse/CQA-18',
       },
       async test() {
         expect(true).to.be.true;
@@ -19,7 +19,7 @@ suite({
       name: 'test 2',
       disable: {
         reason: 'Reason 2',
-        link: 'https://corvaqa.atlassian.net/browse/CQA-453',
+        link: 'https://jira.net/gbrowse/CQA-42',
         env: 'qa',
       },
       async test() {
