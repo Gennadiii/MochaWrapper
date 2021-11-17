@@ -57,12 +57,12 @@ function executeTest(params: executeTestInterface) {
     disable = null;
   }
   const testName = `- ${specName}${
-    disable ? ` #${disable && disable.reason}` : ''}`; // adding disable reason to test name
+    disable ? ` #${disable.reason}` : ''}`;
 
   const testFunc = disable ? it.skip : it;
+  disable?.link && allureReporter.addIssue(disable.link);
 
   testFunc(testName, async function() {
-    disable?.link && allureReporter.addIssue(disable.link);
     await test();
   });
 }
