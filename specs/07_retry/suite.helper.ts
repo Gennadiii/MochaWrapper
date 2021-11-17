@@ -109,7 +109,7 @@ function executeTests(params: executeTestsInterface) {
 
 
 function getEnv(): string {
-  return 'staging';
+  return magicStrings.env.staging;
 }
 
 function getBrowserName(): string {

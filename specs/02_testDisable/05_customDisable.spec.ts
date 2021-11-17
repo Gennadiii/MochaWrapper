@@ -1,4 +1,5 @@
 import {expect} from "chai";
+import {magicStrings} from "../../helpers/magicStrings.helper";
 import {suite} from "./suite.helper";
 
 
@@ -20,7 +21,7 @@ suite({
       disable: {
         reason: 'Reason 2',
         link: 'https://jira.net/gbrowse/CQA-42',
-        env: 'qa',
+        env: magicStrings.env.qa,
       },
       async test() {
         expect(true).to.be.true;

@@ -259,7 +259,7 @@ function isAssertionError(err: Error): boolean {
 }
 
 function getEnv(): string {
-  return 'staging';
+  return magicStrings.env.staging;
 }
 
 function getBrowserName(): string {

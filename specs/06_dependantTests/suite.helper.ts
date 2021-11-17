@@ -1,3 +1,6 @@
+import {magicStrings} from "../../helpers/magicStrings.helper";
+
+
 let specException = null;
 
 export function suite(params: suiteInterface): void {
@@ -81,7 +84,7 @@ function executeTests(params: executeTestsInterface) {
 
 
 function getEnv(): string {
-  return 'staging';
+  return magicStrings.env.staging;
 }
 
 function getBrowserName(): string {

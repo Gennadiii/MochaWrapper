@@ -11,4 +11,8 @@ export const magicStrings = {
       return `${this.root}/dist/testRunIsFailed`;
     },
   },
+  env: {
+    qa: 'qa',
+    staging: 'staging',
+  },
 };

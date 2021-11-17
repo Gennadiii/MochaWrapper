@@ -1,4 +1,5 @@
 import HookFunction = Mocha.HookFunction;
+import {magicStrings} from "../../helpers/magicStrings.helper";
 
 
 let preconditionException = null;
@@ -56,7 +57,7 @@ function executeTest(params: executeTestInterface) {
 
 
 function getEnv(): string {
-  return 'staging';
+  return magicStrings.env.staging;
 }
 
 function getBrowserName(): string {

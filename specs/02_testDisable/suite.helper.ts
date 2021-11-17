@@ -1,4 +1,5 @@
 import allureReporter from "@wdio/allure-reporter";
+import {magicStrings} from "../../helpers/magicStrings.helper";
 
 
 export function suite(params: suiteInterface): void {
@@ -68,7 +69,7 @@ function executeTest(params: executeTestInterface) {
 
 
 function getEnv(): string {
-  return 'staging';
+  return magicStrings.env.staging;
 }
 
 function getBrowserName(): string {
